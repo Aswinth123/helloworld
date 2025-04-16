@@ -1,0 +1,16 @@
+trigger:
+- main  # or your branch name
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    echo "Compiling Java file..."
+    javac JavaWebAppp.java
+  displayName: 'Compile Java File'
+
+- script: |
+    echo "Running Java App..."
+    java JavaWebAppp
+  displayName: 'Run Java Program'
